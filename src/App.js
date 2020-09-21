@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import Test from "./components/LoggedTest";
+import Memory from "./components/Memory";
 import AuthService from "./components/auth/auth-service";
 import { Switch, Route } from "react-router-dom";
 
@@ -49,6 +50,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/about" component={About} />
             <Route path="/test" component={Test} />
+            <Route path="/memories" component={Memory} />
           </Switch>
         </div>
       );
