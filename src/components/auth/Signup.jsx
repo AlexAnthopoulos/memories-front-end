@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import AuthService from "./auth-service";
 
 class Signup extends Component {
-  state = { username: "", password: "", email: "" };
+  state = { username: "", password: "", email: "", isFound: false };
   service = new AuthService();
 
   handleFormSubmit = (event) => {
@@ -20,8 +20,10 @@ class Signup extends Component {
           username: "",
           password: "",
           email: "",
+          isFound: true,
         });
         this.props.getUser(response);
+        this.props.history.push("/userprofile");
       })
       .catch((error) => console.log(error.stack));
   };
@@ -33,9 +35,9 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
+      <div className="signup-form">
+        <form className="signup-inner" onSubmit={this.handleFormSubmit}>
+          <label className="inner-label">Username:</label>
           <input
             type="text"
             name="username"
@@ -43,13 +45,13 @@ class Signup extends Component {
             onChange={(e) => this.handleChange(e)}
           />
 
-          <label>Password:</label>
+          <label className="inner-label">Password:</label>
           <input
             name="password"
             value={this.state.password}
             onChange={(e) => this.handleChange(e)}
           />
-          <label>Email:</label>
+          <label className="inner-label">Email:</label>
           <input
             type="email"
             name="email"
@@ -60,13 +62,13 @@ class Signup extends Component {
           <input type="submit" value="Signup" />
         </form>
 
-        <p>
+        <p className="signup-inner">
           Already have account?
-          <Link to={"/"}> Login</Link>
+          <Link to={"/login"}> Login</Link>
         </p>
       </div>
     );
   }
 }
 
-export default Signup;
+export default withRouter(Signup);

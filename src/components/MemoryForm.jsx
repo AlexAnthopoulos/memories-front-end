@@ -31,10 +31,10 @@ const MemoryForm = ({ location, onClose }) => {
       <textarea name="comments" rows={3} required ref={register}></textarea>
       <label htmlFor="description">Description</label>
       <textarea name="description" rows={3} ref={register}></textarea>
-      <label htmlFor="image">Image</label>
-      <input name="image" required ref={register} />
-      <label htmlFor="visitDate">Visit Date</label>
-      <input name="visitDate" type="date" required ref={register} />
+      <label htmlFor="imageUrl">Image</label>
+      <input name="imageUrl" required ref={register} />
+      <label htmlFor="memoryDate">Memory Date</label>
+      <input name="memoryDate" type="date" required ref={register} />
       <button disabled={loading}>
         {loading ? "Loading..." : "Create Memory"}
       </button>

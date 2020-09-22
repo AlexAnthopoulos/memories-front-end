@@ -23,11 +23,15 @@ class Navbar extends Component {
         <nav className="nav-style">
           <ul>
             <li>Welcome, {this.state.loggedInUser.username}</li>
+
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/memories"> Memories</Link>
             </li>
-            <Link to="/">
-              <button onClick={() => this.logoutUser()}>Logout</button>
+            <li>
+              <Link to="/userprofile"> User Profile</Link>
+            </li>
+            <Link to="/" onClick={() => this.logoutUser()}>
+              Logout
             </Link>
           </ul>
         </nav>
@@ -39,9 +43,7 @@ class Navbar extends Component {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
+
             <li>
               <Link to="/signup">Signup</Link>
             </li>

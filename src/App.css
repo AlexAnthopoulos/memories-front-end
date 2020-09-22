@@ -25,7 +25,7 @@
 }
 
 .marker.yellow path {
-  fill: #F3B73E;
+  fill: #f3b73e;
 }
 
 .popup {
@@ -55,4 +55,101 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+.hero-section {
+  background: url("../src/images/memories.jpg");
+  background-size: cover;
+  height: 1000px;
+  position: relative;
+}
+
+.main-paragraph {
+  color: white;
+}
+
+#form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("../src/images/login.jpg");
+  background-size: cover;
+  position: relative;
+  height: 1000px;
+  padding-right: 100px;
+}
+
+#form-inner {
+  margin-top: 400px;
+}
+
+#form-inner p {
+  margin-left: 200px;
+}
+
+.inner-paragraph {
+  color: white;
+  display: flex;
+  align-self: flex-start;
+}
+
+.site-btn {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  color: #131313;
+  padding: 16px 30px;
+  min-width: 153px;
+  border-radius: 50px;
+  font-weight: 500;
+  border: none;
+  background: #ffb320;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.index-text {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  position: relative;
+  top: 410px;
+  left: 100px;
+}
+
+.index-text h2 {
+  color: rgb(255, 98, 0);
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.index-text p {
+  color: rgb(250, 248, 248);
+}
+
+.home-paragraph {
+  font-size: 20px;
+  color: #878787;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.inner-label {
+  color: rgb(7, 7, 7);
+  font-weight: bold;
+}
+
+.signup-form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("../src/images/signup.jpg");
+  background-size: cover;
+  position: relative;
+  height: 1000px;
+  padding-right: 100px;
+}
+
+.signup-inner {
+  margin-top: 300px;
 }

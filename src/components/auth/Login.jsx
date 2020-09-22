@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 import AuthService from "./auth-service";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = { username: "", password: "" };
@@ -18,6 +18,7 @@ class Login extends Component {
       .then((response) => {
         this.setState({ username: "", password: "" });
         this.props.getUser(response);
+        this.props.history.push("/userprofile");
       })
       .catch((error) => console.log(error));
   };
@@ -29,31 +30,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <label>Password:</label>
-          <input
-            name="password"
-            value={this.state.password}
-            onChange={(e) => this.handleChange(e)}
-          />
+      <div id="form">
+        <div id="form-inner">
+          <form onSubmit={this.handleFormSubmit}>
+            <label className="inner-label">Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <label className="inner-label">Password:</label>
+            <input
+              name="password"
+              value={this.state.password}
+              onChange={(e) => this.handleChange(e)}
+            />
 
-          <input type="submit" value="Login" />
-        </form>
-        <p>
-          Don't have account?
-          <Link to={"/signup"}> Signup</Link>
-        </p>
+            <input type="submit" value="Login" />
+          </form>
+          <p className="inner-paragraph">
+            Don't have account?
+            <Link to={"/signup"}> Signup</Link>
+          </p>
+        </div>
       </div>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);

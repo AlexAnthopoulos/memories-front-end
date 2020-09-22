@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
 import Home from "./components/Home";
-import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import Test from "./components/LoggedTest";
 import Memory from "./components/Memory";
+import UserProfile from "./components/UserProfile";
 import AuthService from "./components/auth/auth-service";
+
 import { Switch, Route } from "react-router-dom";
+import ProtectedRoute from "./components/auth/Protected-Route";
 
 class App extends Component {
   state = { loggedInUser: null };
@@ -48,9 +50,9 @@ class App extends Component {
             getUser={this.getTheUser}
           />
           <Switch>
-            <Route exact path="/about" component={About} />
             <Route path="/test" component={Test} />
             <Route path="/memories" component={Memory} />
+            <Route path="/userprofile" component={UserProfile} />
           </Switch>
         </div>
       );
@@ -60,7 +62,7 @@ class App extends Component {
           <Navbar userInSession={this.state.loggedInUser} />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+
             <Route
               exact
               path="/signup"
@@ -71,6 +73,9 @@ class App extends Component {
               path="/login"
               render={() => <Login getUser={this.getTheUser} />}
             />
+
+            <ProtectedRoute path="/memories" component={Memory} />
+            <ProtectedRoute path="/userprofile" component={UserProfile} />
           </Switch>
         </div>
       );

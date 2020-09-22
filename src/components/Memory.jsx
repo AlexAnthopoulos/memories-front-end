@@ -3,7 +3,6 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 import { listLogEntries } from "./API";
 import MemoryForm from "./MemoryForm";
-import Navbar from "./Navbar";
 
 const Memory = () => {
   const [logEntries, setLogEntries] = useState([]);
@@ -39,7 +38,7 @@ const Memory = () => {
       {/* <Navbar /> */}
       <ReactMapGL
         {...viewport}
-        mapStyle="mapbox://styles/thecjreynolds/ck117fnjy0ff61cnsclwimyay"
+        mapStyle="mapbox://styles/zephox/ckfccuojr2bve1ap0pzqhk2cf"
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={setViewport}
         onDblClick={showAddMarkerPopup}
@@ -93,7 +92,8 @@ const Memory = () => {
                   <h3>{entry.title}</h3>
                   <p>{entry.comments}</p>
                   <small>
-                    Visited on: {new Date(entry.visitDate).toLocaleDateString()}
+                    Visited on:{" "}
+                    {new Date(entry.memoryDate).toLocaleDateString()}
                   </small>
                   {entry.image && <img src={entry.image} alt={entry.title} />}
                 </div>
