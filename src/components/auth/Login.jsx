@@ -39,20 +39,32 @@ class Login extends Component {
               name="username"
               value={this.state.username}
               onChange={(e) => this.handleChange(e)}
+              className="form-control"
             />
-            <label className="inner-label">Password:</label>
+            <label className="inner-label mt-2">Password:</label>
             <input
               name="password"
               value={this.state.password}
               onChange={(e) => this.handleChange(e)}
+              className="form-control"
             />
 
-            <input type="submit" value="Login" />
+            <div className="row mt-4">
+              <div className="col-4">
+                <input
+                  type="submit"
+                  value="Login"
+                  className="btn btn-primary"
+                />
+              </div>
+              <div className="col-8 text-white text-right">
+                <p className="inner-paragraph">
+                  Don't have account?
+                  <Link to={"/signup"}> Signup</Link>
+                </p>
+              </div>
+            </div>
           </form>
-          <p className="inner-paragraph">
-            Don't have account?
-            <Link to={"/signup"}> Signup</Link>
-          </p>
         </div>
       </div>
     );

@@ -2,14 +2,42 @@
   text-align: right;
 }
 
+.nav-style ul {
+  margin: 0;
+  padding: 0 20px;
+  background: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+  position: relative;
+  z-index: 999;
+  border-bottom: 1px solid rgb(255, 98, 0);
+}
+
 .nav-style li {
   list-style: none;
-  display: inline;
-  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-style li::after {
+  content: '';
+  width: 1px;
+  height: 15px;
+  position: absolute;
+  right: 0;
+  top: 18px;
+  background: rgb(255, 98, 0);
 }
 
 .nav-style a {
+  display: inline-block;
   text-decoration: none;
+  padding: 10px;
+  color: rgb(255, 98, 0);
+  font-size: 21px;
+}
+
+.nav-style a:hover {
+  color: rgb(255, 140, 20);
 }
 
 .marker {
@@ -60,7 +88,7 @@ body {
 .hero-section {
   background: url("../src/images/memories.jpg");
   background-size: cover;
-  height: 1000px;
+  height: 100vh;
   position: relative;
 }
 
@@ -68,30 +96,9 @@ body {
   color: white;
 }
 
-#form {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  background-image: url("../src/images/login.jpg");
-  background-size: cover;
-  position: relative;
-  height: 1000px;
-  padding-right: 100px;
-}
-
-#form-inner {
-  margin-top: 400px;
-}
-
-#form-inner p {
-  margin-left: 200px;
-}
-
-.inner-paragraph {
+/*.inner-paragraph {
   color: white;
-  display: flex;
-  align-self: flex-start;
-}
+}*/
 
 .site-btn {
   display: inline-block;
@@ -139,17 +146,22 @@ body {
   font-weight: bold;
 }
 
+#form,
 .signup-form {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   background-image: url("../src/images/signup.jpg");
   background-size: cover;
   position: relative;
-  height: 1000px;
-  padding-right: 100px;
+  min-height: 100vh;
 }
 
+#form-inner,
 .signup-inner {
-  margin-top: 300px;
+  width: 400px;
+}
+
+#form {
+  background-image: url("../src/images/login.jpg");
 }

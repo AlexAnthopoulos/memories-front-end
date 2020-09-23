@@ -95,7 +95,9 @@ const Memory = () => {
                     Visited on:{" "}
                     {new Date(entry.memoryDate).toLocaleDateString()}
                   </small>
-                  {entry.image && <img src={entry.image} alt={entry.title} />}
+                  {entry.imageUrl && (
+                    <img src={entry.imageUrl} alt={entry.title} />
+                  )}
                 </div>
               </Popup>
             ) : null}

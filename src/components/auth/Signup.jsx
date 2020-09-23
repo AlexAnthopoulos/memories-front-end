@@ -36,36 +36,50 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup-form">
-        <form className="signup-inner" onSubmit={this.handleFormSubmit}>
-          <label className="inner-label">Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={(e) => this.handleChange(e)}
-          />
+        <div className="signup-inner">
+          <form onSubmit={this.handleFormSubmit}>
+            <label className="inner-label">Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control"
+            />
 
-          <label className="inner-label">Password:</label>
-          <input
-            name="password"
-            value={this.state.password}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <label className="inner-label">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={(e) => this.handleChange(e)}
-          />
+            <label className="inner-label mt-2">Password:</label>
+            <input
+              name="password"
+              value={this.state.password}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control"
+            />
+            <label className="inner-label mt-2">Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control"
+            />
 
-          <input type="submit" value="Signup" />
-        </form>
-
-        <p className="signup-inner">
-          Already have account?
-          <Link to={"/login"}> Login</Link>
-        </p>
+            <div className="row mt-4">
+              <div className="col-4">
+                <input
+                  type="submit"
+                  value="Signup"
+                  className="btn btn-primary"
+                />
+              </div>
+              <div className="col-8 text-white text-right">
+                <p className="mb-0 mt-1">
+                  Already have account?
+                  <Link to={"/login"}> Login</Link>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
