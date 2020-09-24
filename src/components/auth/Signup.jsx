@@ -45,6 +45,7 @@ class Signup extends Component {
               value={this.state.username}
               onChange={(e) => this.handleChange(e)}
               className="form-control"
+              required
             />
 
             <label className="inner-label mt-2">Password:</label>
@@ -53,6 +54,7 @@ class Signup extends Component {
               value={this.state.password}
               onChange={(e) => this.handleChange(e)}
               className="form-control"
+              required
             />
             <label className="inner-label mt-2">Email:</label>
             <input
@@ -61,6 +63,7 @@ class Signup extends Component {
               value={this.state.email}
               onChange={(e) => this.handleChange(e)}
               className="form-control"
+              required
             />
 
             <div className="row mt-4">

@@ -23,11 +23,22 @@ const UserProfile = () => {
 
       {logEntries.map((memory) => {
         return (
-          <div>
-            <h3>{memory.title}</h3>
-            <p>{memory.description}</p>
-            <img width={400} src={memory.imageUrl} />
-            <button onClick={() => deleteMemory(memory._id)}>DELETE</button>
+          <div className="flip-card image-frame">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <h3>{memory.memoryDate}</h3>
+                <img width={400} src={memory.imageUrl} />
+              </div>
+              <div className="flip-card-back">
+                <h3 className="text-capitalize">{memory.title}</h3>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteMemory(memory._id)}
+                >
+                  DELETE
+                </button>
+              </div>
+            </div>
           </div>
         );
       })}
