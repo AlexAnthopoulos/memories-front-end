@@ -22,7 +22,9 @@ class Navbar extends Component {
       return (
         <nav className="nav-style">
           <ul>
-            <li>Welcome, {this.state.loggedInUser.username}</li>
+            <li className="welcome">
+              Welcome, {this.state.loggedInUser.username}
+            </li>
 
             <li>
               <Link to="/memories"> Memories</Link>

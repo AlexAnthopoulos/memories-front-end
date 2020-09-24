@@ -45,8 +45,10 @@ const MemoryForm = ({ location, onClose }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="entry-form">
       {error ? <h3 className="error">{error}</h3> : null}
-      <label htmlFor="title">Title</label>
-      <input name="title" required ref={register} />
+      <div className="form-group">
+        <label htmlFor="title">Title</label>
+        <input name="title" required ref={register} />
+      </div>
       <label htmlFor="comments">Comments</label>
       <textarea name="comments" rows={3} required ref={register}></textarea>
       <label htmlFor="description">Description</label>
@@ -61,7 +63,7 @@ const MemoryForm = ({ location, onClose }) => {
       />
       <label htmlFor="memoryDate">Memory Date</label>
       <input name="memoryDate" type="date" required ref={register} />
-      <button disabled={loading}>
+      <button type="submit" className="btn btn-primary" disabled={loading}>
         {loading ? "Loading..." : "Create Memory"}
       </button>
     </form>

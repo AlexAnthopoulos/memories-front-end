@@ -1,7 +1,23 @@
 const API_URL = "http://localhost:5000";
 
 export async function listLogEntries() {
-  const response = await fetch(`${API_URL}/api/logs`);
+  const response = await fetch(`${API_URL}/api/logs`, {
+    credentials: "include",
+  });
+  return response.json();
+}
+export async function listUserLogEntries() {
+  const response = await fetch(`${API_URL}/api/userlogs`, {
+    credentials: "include",
+  });
+  return response.json();
+}
+
+export async function deleteUserLogEntry(_id) {
+  const response = await fetch(`${API_URL}/api/userlogs/${_id}`, {
+    credentials: "include",
+    method: "DELETE",
+  });
   return response.json();
 }
 
@@ -11,6 +27,7 @@ export async function createLogEntry(entry) {
     headers: {
       "content-type": "application/json",
     },
+    credentials: "include",
     body: JSON.stringify(entry),
   });
   return response.json();

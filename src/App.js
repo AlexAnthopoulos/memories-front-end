@@ -41,6 +41,7 @@ class App extends Component {
   };
 
   render() {
+    document.title = "Memories";
     this.fetchUser();
     if (this.state.loggedInUser) {
       return (
