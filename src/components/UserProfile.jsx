@@ -26,7 +26,7 @@ const UserProfile = () => {
           <div className="flip-card image-frame">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <h3>{memory.memoryDate}</h3>
+                <h3>{memory.memoryDate.slice(0, 10)}</h3>
                 <img width={400} src={memory.imageUrl} />
               </div>
               <div className="flip-card-back">
