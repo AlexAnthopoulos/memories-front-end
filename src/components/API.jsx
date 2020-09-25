@@ -1,4 +1,4 @@
-const API_URL = "https://memories-back-end.herokuapp.com/";
+const API_URL = "https://memories-back-end.herokuapp.com";
 
 export async function listLogEntries() {
   const response = await fetch(`${API_URL}/api/logs`, {
