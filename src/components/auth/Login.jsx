@@ -43,6 +43,7 @@ class Login extends Component {
             />
             <label className="inner-label mt-2">Password:</label>
             <input
+              type="password"
               name="password"
               value={this.state.password}
               onChange={(e) => this.handleChange(e)}

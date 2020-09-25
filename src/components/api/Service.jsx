@@ -1,6 +1,6 @@
 import axios from "axios";
 const service = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://memories-back-end.herokuapp.com/api",
   withCredentials: true,
 });
 
