@@ -18,7 +18,7 @@ const MemoryForm = ({ location, onClose }) => {
       await createLogEntry(data);
       onClose();
     } catch (error) {
-      console.error(error);
+      
       setError(error.message);
       setLoading(false);
     }
