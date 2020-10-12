@@ -21,3 +21,19 @@ People can complete a form after login/signup and upload their favorite moment a
 ## Global View of memories!
 
 Your memories get saved and every time you log in, all pictures appear on your profile and are visible with pins on the map view!
+
+
+### Install Dependencies (frontend & backend)
+
+```
+yarn
+```
+
+### Run
+
+```
+# Run frontend (:3000) & backend (:5000)
+
+Front End : yarn start
+Back End: yarn run dev
+```
